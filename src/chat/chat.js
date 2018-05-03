@@ -2,6 +2,7 @@ class Chat {
 	constructor ({el}) {
 		this.el = el;
 		this.messages = [];
+		this.getMessages();
 	}
 
 	getMessages() {
@@ -11,7 +12,7 @@ class Chat {
 		{sender:'Julia',text:'Too boring'} ]
 	}
 
-	render () {
+	render () {		
 		const box = document.createElement('div');
 		box.classList.add('chat_window');
 		let htmlCode = this.messages.map(({sender,text})=>{
@@ -19,12 +20,13 @@ class Chat {
 						<h3>${sender}</h3>
 						<p>${text}</p>
 					</div>`
-		}).join('');
+		}).join('');		
 		box.innerHTML = htmlCode;
+		this.el.innerHTML='';
 		this.el.append(box);
 	}
 
-	addMessage () {
-
+	addMessage (mes) {
+		this.messages.push({sender: 'you', text: `${mes}`});
 	}
 }

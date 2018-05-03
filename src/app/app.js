@@ -5,7 +5,7 @@ class App {
 		this.chat = new Chat ({el: document.createElement('div'),});
 		this.form = new Form ({
 			el: document.createElement('div'),
-			onSubmit: ()=>this.formSubmit(),});
+			onSubmit: this.formSubmit.bind(this)});
 		this.el.append(this.chat.el, this.form.el);
 		this.render();
 	}
@@ -16,12 +16,7 @@ class App {
 	}
 
 	formSubmit(text) {
-		this.chat.messages = [
-			...this.chat.messages,
-			{text, 
-			sender: this.sender
-			},
-		];
+		this.chat.addMessage(text);
 		this.render();
 	}
 }
