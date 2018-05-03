@@ -1,0 +1,21 @@
+h3 {
+	color:#0088cc;
+	font-style: italic;
+	font-family: 'Roboto', sans-serif;
+	margin: 0px;
+	margin-top: 16px;
+}
+
+p{
+	margin: 0px;
+	font-family: 'Roboto Slab', serif;
+}
+
+.chat_window {
+	border: 1px solid black;
+	border-radius: 1%;
+	width: 300px;
+	height: 450px; 
+	overflow: auto;
+	background-color: #fcffbc;
+}

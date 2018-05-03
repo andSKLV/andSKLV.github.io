@@ -1,0 +1,23 @@
+.form {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.form_text {
+	resize: none;
+	width: 300px;
+	min-height: 50px;
+	font-family: 'Roboto Slab', serif;
+}
+
+.form_submit {
+	border: 2px solid #0088cc;
+	background-color: #0088cc;
+	color: white;
+}
+
+.form_submit:hover {
+	background-color: white;
+	color: #0088cc;	
+}
