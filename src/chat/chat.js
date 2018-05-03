@@ -8,6 +8,7 @@ class Chat {
 	}
 
 	getMessages() {
+		
 		this.messages = [
 		{sender:'Julia', text: 'Hi! How are you?'},
 		{sender:'Phill',text:'I just got a lot of job and want to...'},
