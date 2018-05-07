@@ -5,16 +5,14 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="src/app/app.css">
 		<link rel="stylesheet" type="text/css" href="src/chat/chat.css">
-		<link rel="stylesheet" type="text/css" href="src/form/form.css">
+    <link rel="stylesheet" type="text/css" href="src/form/form.css">
     <title>Chat!</title>
 </head>
 <body>
 		<div class='app_box'></div>	
-    <script type="text/javascript" src='src/app/app.js'></script>
-    <script type="text/javascript" src='src/chat/chat.js'></script>
-    <script type="text/javascript" src='src/form/form.js'></script>
-    <script type="text/javascript">
-    	new App({el:document.querySelector('.app_box')});
+    <script type="module">
+      import {App} from "./src/app/app.js"
+    	new App({el:document.querySelector('.app_box')});      
     </script>
 </body>
 </html>

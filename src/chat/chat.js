@@ -1,4 +1,4 @@
-class Chat {
+export class Chat {
 	constructor ({el}) {
 		this.el = el;
 		this.messages = [];
