@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andSKLV/chat.git"
+    "url": "git+https://github.com/andSKLV/andSKLV.github.io.git"
   },
   "author": "Andrey Sokolov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andSKLV/chat/issues"
+    "url": "https://github.com/andSKLV/andSKLV.github.io/issues"
   },
-  "homepage": "https://github.com/andSKLV/chat#readme",
+  "homepage": "https://github.com/andSKLV.github.io/chat#readme",
   "devDependencies": {
     "static-server": "^2.2.1"
   }
