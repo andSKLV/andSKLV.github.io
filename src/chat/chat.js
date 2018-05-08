@@ -20,6 +20,7 @@ export class Chat {
 	}
 
 	addMessage (mes) {
+		if (mes==='') return true; 
 		this.messages.push({
 			sender: `${this.yourNickname}`, 
 			text: `${mes}`});
