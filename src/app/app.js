@@ -4,8 +4,8 @@ import {Form} from './../form/form.js';
 export class App {
 	constructor ({el}) {
 		this.el = el;
-		this.sender = 'Michael';
-		this.chat = new Chat ({el: document.createElement('div'),});
+		let messages = this.getMessages();		
+		this.chat = new Chat ({el: document.createElement('div'), "messages": messages,});
 		this.form = new Form ({
 			el: document.createElement('div'),
 			onSubmit: this.formSubmit.bind(this)});
@@ -21,5 +21,12 @@ export class App {
 	formSubmit(text) {
 		this.chat.addMessage(text);
 		this.render();
+	}
+
+	getMessages() {
+		return [
+			{ sender: 'Julia', text: 'Hi! How are you?' },
+			{ sender: 'Phill', text: 'I just got a lot of job and want to...' },
+			{ sender: 'Julia', text: 'Too boring' },]
 	}
 }

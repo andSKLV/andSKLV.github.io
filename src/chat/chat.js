@@ -1,18 +1,8 @@
 export class Chat {
-	constructor ({el}) {
+	constructor ({el, messages = [], nick = 'you'}) {
 		this.el = el;
-		this.messages = [];
-
-		this.getMessages();
-		this.yourNickname = 'you';
-	}
-
-	getMessages() {
-		
-		this.messages = [
-		{sender:'Julia', text: 'Hi! How are you?'},
-		{sender:'Phill',text:'I just got a lot of job and want to...'},
-		{sender:'Julia',text:'Too boring'}, ]
+		this.messages = messages;
+		this.yourNickname = nick;
 	}
 
 	render () {		
@@ -30,12 +20,8 @@ export class Chat {
 	}
 
 	addMessage (mes) {
-		(mes==='') ? this.messages.push({
-			sender: `${this.yourNickname}`,
-			text: `I'm too busy to write some text`
-			}) 
-		: this.messages.push({
-				sender: `${this.yourNickname}`, 
-				text: `${mes}`});
+		this.messages.push({
+			sender: `${this.yourNickname}`, 
+			text: `${mes}`});
 	}
 }
