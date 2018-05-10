@@ -1,6 +1,6 @@
 import {Chat} from './../chat/chat.js';
 import {Form} from './../form/form.js';
-import {httpReq} from "./../modules/html.service.js";
+import {httpReq} from './../modules/html.service.js';
 
 export class App {
 	constructor ({el}) {
