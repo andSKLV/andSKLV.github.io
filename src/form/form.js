@@ -16,6 +16,6 @@ export class Form {
 
 	_onSubmit (event) {
 		event.preventDefault();
-		this.onSubmit(event.target.querySelector('textarea').value);
+		this.onSubmit({name:'you', text: event.target.querySelector('textarea').value});
 	}
 }

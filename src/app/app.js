@@ -4,7 +4,7 @@ import {httpReq} from "./../modules/html.service.js";
 
 export class App {
 	constructor ({el}) {
-		this.el = el;
+		this.el = el;			
 		this.chat = new Chat ({el: document.createElement('div')});
 		this.form = new Form ({
 			el: document.createElement('div'),
@@ -19,14 +19,17 @@ export class App {
 		this.form.render();
 	}
 
-	formSubmit(text) {
-		this.chat.addMessage(text);
+	formSubmit(mes) {
+		this.http.post(mes);
+		// this.chat.addMessage(mes);
+		this.getMessages();
 		this.render();
 	}
 
-	getMessages() {
-		this.http.get((mes) => { 
-			this.chat.addMessage(mes); 
+	getMessages() {		
+		this.http.get((obj) => {
+			this.chat.clear();
+			Object.values(obj).forEach((msg) => { this.chat.addMessage(msg) });	
 			this.render();
 		});
 	}
