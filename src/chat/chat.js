@@ -5,7 +5,7 @@ export class Chat {
 		this.name = nick;
 	}
 
-	render () {	
+	render () {
 		const box = document.createElement('div');
 		box.classList.add('chat_window');
 		let htmlCode = this.messages.map(({name,text})=>{
@@ -21,7 +21,17 @@ export class Chat {
 		}).join('');		
 		box.innerHTML = htmlCode;
 		this.el.innerHTML='';
-		this.el.append(box);				
+		this.el.append(box);
+	}
+
+	_saveScrollState () {
+		let win = this.el.querySelector('.chat_window');
+		return win.scrollTop;
+	}
+
+	_setScrollState (state) {
+		let win = this.el.querySelector('.chat_window');		
+		win.scrollTop = state;
 	}
 
 	scrollToBottom () {

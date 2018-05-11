@@ -27,26 +27,28 @@ export class App {
 		this.el.append(this.chat.el, this.form.el);
 		this.http = new httpReq({ url: 'https://chat-19516.firebaseio.com/chat.json' });
 		this.getMessages();
-		this._renderChat();
-		setInterval (()=>{this._reload()},5000);
+		this._renderApp();
+		setInterval (()=>{this._reload()},1000);
 	}
 
-	_renderChat () {
+	_renderApp() {
 		this.chat.render();
 		this.form.render();
+		this.chat.scrollToBottom();
 	}
 
 	_reload(){
 		this.getMessages();
+		let scrollState = this.chat._saveScrollState();
 		this.chat.render();
+		this.chat._setScrollState(scrollState);
 	}
 
 	formSubmit(mes) {
 		mes.name = this.nick;
 		this.http.post(mes);		
 		this.getMessages();
-		this._renderChat();
-		this.chat.scrollToBottom();
+		this._renderApp();
 	}
 
 	loginSubmit ({text}) {
@@ -61,8 +63,7 @@ export class App {
 	getMessages() {		
 		this.http.get((obj) => {
 			this.chat.clear();
-			Object.values(obj).forEach((msg) => { this.chat.addMessage(msg) });	
-			this._renderChat();
+			Object.values(obj).forEach((msg) => { this.chat.addMessage(msg) });				
 		});
 	}
 }
