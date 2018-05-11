@@ -6,10 +6,11 @@ export class Chat {
 	}
 
 	render () {
-		let cls = '';		
+				
 		const box = document.createElement('div');
 		box.classList.add('chat_window');
 		let htmlCode = this.messages.map(({name,text})=>{
+			let cls = '';
 			if (name===this.name) {
 				name = 'you';
 				cls =' left_mes';
