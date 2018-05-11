@@ -21,3 +21,12 @@
 .form_submit:hover {
 	background-color: #02a2f2;	
 }
+
+.form_text::-webkit-scrollbar {
+	width: 5px;
+	background-color: white;
+}
+
+.form_text::-webkit-scrollbar-thumb {
+	background-color: #0088cc;
+}
