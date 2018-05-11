@@ -5,12 +5,16 @@ export class Chat {
 		this.name = nick;
 	}
 
-	render () {		
+	render () {
+		let cls = '';		
 		const box = document.createElement('div');
 		box.classList.add('chat_window');
 		let htmlCode = this.messages.map(({name,text})=>{
-			if (name===this.name) name = 'you';
-			return `<div class="message">
+			if (name===this.name) {
+				name = 'you';
+				cls =' left_mes';
+			}
+			return `<div class="message${cls}">
 						<h3>${name}</h3>
 						<p>${text}</p>
 					</div>`
