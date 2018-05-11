@@ -5,8 +5,7 @@ export class Chat {
 		this.name = nick;
 	}
 
-	render () {
-				
+	render () {	
 		const box = document.createElement('div');
 		box.classList.add('chat_window');
 		let htmlCode = this.messages.map(({name,text})=>{

@@ -28,11 +28,17 @@ export class App {
 		this.http = new httpReq({ url: 'https://chat-19516.firebaseio.com/chat.json' });
 		this.getMessages();
 		this._renderChat();
+		setInterval (()=>{this._reload()},5000);
 	}
 
 	_renderChat () {
 		this.chat.render();
 		this.form.render();
+	}
+
+	_reload(){
+		this.getMessages();
+		this.chat.render();
 	}
 
 	formSubmit(mes) {
