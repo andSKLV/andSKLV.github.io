@@ -19,3 +19,12 @@ p{
 	overflow: auto;
 	box-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
+
+.chat_window::-webkit-scrollbar {
+	width: 5px;
+	background-color: white;
+}
+
+.chat_window::-webkit-scrollbar-thumb {
+	background-color: #0088cc;
+}
